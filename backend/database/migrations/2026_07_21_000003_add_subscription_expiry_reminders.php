@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration;use Illuminate\Database\Schema\Blueprint;use Illuminate\Support\Facades\Schema;
+return new class extends Migration{public function up():void{Schema::table('order_items',fn(Blueprint $t)=>$t->dateTime('service_expires_at')->nullable()->after('delivery_payload')->index());Schema::create('subscription_reminders',function(Blueprint $t){$t->id();$t->foreignId('order_item_id')->constrained()->cascadeOnDelete();$t->string('reminder_key',20);$t->timestamp('sent_at');$t->timestamps();$t->unique(['order_item_id','reminder_key']);});}public function down():void{Schema::dropIfExists('subscription_reminders');Schema::table('order_items',fn(Blueprint $t)=>$t->dropColumn('service_expires_at'));}};

@@ -1,0 +1,81 @@
+# Frontend dependencies and generated output
+/node_modules/
+/.next/
+/out/
+/dist/
+/.turbo/
+/.vercel/
+/coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local environment files (keep safe templates)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Laravel dependencies and generated runtime data
+/backend/vendor/
+/backend/node_modules/
+/backend/public/build/
+/backend/public/hot
+/backend/public/storage
+/backend/bootstrap/cache/*.php
+/backend/storage/*.key
+/backend/storage/pail/
+/backend/storage/app/private/*
+!/backend/storage/app/private/.gitignore
+/backend/storage/app/public/*
+!/backend/storage/app/public/.gitignore
+/backend/storage/logs/*
+!/backend/storage/logs/.gitignore
+/backend/.phpunit.cache/
+/backend/.phpunit.result.cache
+/backend/auth.json
+
+# Local databases, database exports, and backups
+*.sqlite
+*.sqlite3
+*.sqlite.backup
+*.sql.gz
+*.sql.zip
+*.dump
+*.bak
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Logs and package-manager noise
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors and operating-system files
+/.vscode/
+/.idea/
+/.fleet/
+/.nova/
+/.zed/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local AI/hosting metadata
+/.openai/
+/.agents/
+/.codex/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~

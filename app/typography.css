@@ -1,0 +1,134 @@
+/* Readable type scale: Myanmar glyphs need more size and line-height than Latin UI text. */
+body { font-size: 16px; line-height: 1.75; }
+
+p { font-size: 14px!important; line-height: 1.85!important; }
+small { font-size: 12px!important; line-height: 1.6!important; }
+label { font-size: 13px!important; line-height: 1.55!important; }
+input,textarea,select { font-size: 14px!important; }
+button,.gold-btn,.ghost-btn { font-size: 13px!important; }
+th { font-size: 12px!important; }
+td { font-size: 13px!important; }
+
+.app-header nav a { font-size: 13px; }
+.brand b { font-size: 18px; }
+.brand small { font-size: 10px!important; }
+.footer p,.footer a,.footer span { font-size: 12px; }
+.footer>div>b { font-size: 14px; }
+
+.home-kicker,.home-notice span,.home-notice a,.home-section-head>a,
+.detail-category,.catalog-hero>span,.checkout-hero>span,.tracking-hero>span,
+.auth-kicker,.auth-form-head>span,.customer-heading>div>span {
+  font-size: 11px!important;
+}
+.home-assurances,.home-category-card small,.product-category,.warranty,
+.stock,.delivery,.product-price span,.card-action {
+  font-size: 12px!important;
+}
+.home-category-card b,.product-card>p,.catalog-help p,.trust-list p,
+.home-faq-intro>p { font-size: 13px!important; }
+.product-card h3 { font-size: 19px; }
+.product-price b { font-size: 17px; }
+
+.filter-group>span,.filter-group button,.catalog-result-head,.catalog-sort span,
+.catalog-sort select,.catalog-help b,.catalog-help a,.breadcrumbs,
+.product-detail-info>p,.detail-facts span,.detail-facts b,.detail-note b,
+.detail-note p,.detail-support { font-size: 12px!important; }
+
+.checkout-box-head h2 { font-size: 18px; }
+.checkout-box-head p,.checkout-fields label>small,.field-error,
+.payment-config-note b,.payment-config-note p,.proof-upload small,
+.proof-preview b,.proof-preview small,.proof-preview button,.checkout-note>small,
+.checkout-product b,.checkout-product small,.quantity-row,.summary-prices p,
+.checkout-consent,.checkout-summary>a { font-size: 12px!important; }
+.checkout-fields input,.checkout-note textarea { min-height: 50px; }
+
+/* Inputs without an explicit type are text inputs too (register name field). */
+.auth-form-card input:not([type]),
+.auth-form-card input[type="email"],
+.auth-form-card input[type="text"],
+.auth-form-card input[type="password"] {
+  width: 100%;
+  height: 52px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  outline: 0;
+  background: var(--soft-bg);
+  color: var(--text);
+  font-size: 14px!important;
+}
+.auth-form-card>label { font-size: 13px!important; gap: 8px; }
+.auth-form-card label>small,.auth-options label,.auth-options>small,
+.auth-options>button,.auth-divider,.telegram-login,.auth-home-link,
+.auth-config-warning b,.auth-config-warning small,.auth-form-error {
+  font-size: 12px!important;
+}
+.auth-form-head p,.auth-intro>div>p { font-size: 14px!important; }
+.auth-intro li b { font-size: 14px; }
+.auth-intro li small { font-size: 12px!important; }
+.auth-intro h1 { font-size: clamp(38px,3.5vw,52px); }
+.auth-form-card { width: min(520px,100%); }
+.auth-tabs { width: min(520px,100%); }
+
+.customer-profile b,.customer-sidebar nav button,.customer-sidebar-help b,
+.customer-panel-head button,.customer-panel-head>span,.customer-orders td,
+.dashboard-status,.dashboard-empty p,.customer-heading p,.customer-stats span,
+.customer-stats small { font-size: 12px!important; }
+.customer-profile small,.customer-sidebar-help a { font-size: 11px!important; }
+.customer-panel-head h2 { font-size: 18px; }
+
+.tracking-form label>small,.tracking-error b,.tracking-error p,
+.tracking-help b,.tracking-help p,.tracking-result header small,
+.tracking-result header p,.tracking-status,.tracking-timeline article b,
+.tracking-timeline article small,.tracking-terminal b,.tracking-terminal p,
+.tracking-terminal>a,.tracking-result>footer,.tracking-account-cta b,
+.tracking-account-cta small { font-size: 12px!important; }
+
+@media(max-width:580px) {
+  body { font-size: 15px; }
+  p { font-size: 13px!important; }
+  .auth-form-card { padding: 24px; }
+}
+
+/* Shared optical centering for compact controls, pills and numeric/icon badges. */
+.gold-btn,.ghost-btn,.icon-btn,.menu-btn,
+.auth-tabs button,.telegram-login,.password-field button,
+.quantity-row button,.checkout-payment-methods button>span,
+.checkout-box-head>span,.tracking-timeline article i,
+.tracking-terminal>span,.tracking-account-cta>div>span,
+.dashboard-empty>span,.reviews-empty>span,.review-avatar {
+  align-items:center;
+  justify-content:center;
+  line-height:1!important;
+}
+
+.gold-btn,.ghost-btn,.auth-tabs button,.telegram-login,.password-field button,
+.quantity-row button {
+  display:inline-flex;
+}
+
+.warranty,.dashboard-status,.tracking-status,.store-status,
+.home-kicker,.manage-status,.stock-badge {
+  min-height:30px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1!important;
+  vertical-align:middle;
+}
+
+.filter-group button,.checkout-payment-methods button,.card-action,
+.customer-sidebar nav button,.admin-console-nav nav button {
+  align-items:center;
+  line-height:1.25!important;
+}
+
+.filter-group button i,.filter-group button em,
+.checkout-payment-methods button>span,.checkout-payment-methods button>i,
+.quantity-row button,.quantity-row b,.tracking-timeline article i {
+  line-height:1!important;
+}
+
+.dashboard-status { min-width:78px; padding:0 11px; }
+.tracking-status { min-width:92px; padding:0 12px; }
+.warranty { padding:0 10px; }

@@ -1,0 +1,10 @@
+"use client";
+import Link from "next/link";
+import { FormEvent, useState } from "react";
+import { AppHeader } from "@/components/AppHeader";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
+export default function ForgotPasswordPage() {
+  const [email,setEmail]=useState(""); const [message,setMessage]=useState(""); const [error,setError]=useState(""); const [loading,setLoading]=useState(false);
+  async function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();setError("");setMessage("");if(!apiUrl)return setError("Backend API URL မသတ်မှတ်ရသေးပါ။");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return setError("အသုံးပြုနိုင်သော email ဖြည့်ပါ။");setLoading(true);try{const response=await fetch(`${apiUrl}/api/v1/forgot-password`,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email:email.trim()})});const data=await response.json().catch(()=>({}));if(!response.ok)setError(data.message||"Reset link တောင်း၍မရပါ။");else setMessage(data.message||"ဒီ email နဲ့ account ရှိပါက reset link ပို့ထားပါတယ်။");}catch{setError("Server နှင့် ဆက်သွယ်၍မရပါ။");}finally{setLoading(false);}}
+  return <main className="auth-shell"><AppHeader/><section className="reset-layout"><form className="auth-form-card reset-card" onSubmit={submit} noValidate><Link href="/login" className="reset-back">← Login သို့ပြန်သွားရန်</Link><div className="auth-form-head"><span>ACCOUNT RECOVERY</span><h2>Password ပြန်လည်သတ်မှတ်ရန်</h2><p>အကောင့်ဖွင့်ခဲ့သော email ကိုဖြည့်ပါ။ သက်တမ်း ၆၀ မိနစ်ရှိသော link ပို့ပေးပါမယ်။</p></div>{error&&<div className="auth-form-error" role="alert">{error}</div>}{message?<div className="reset-success" role="status"><b>Email ကိုစစ်ဆေးပါ</b><span>{message}</span><small>Inbox မှာမတွေ့ရင် Spam/Junk folder ကိုပါ စစ်ကြည့်ပါ။</small></div>:<><label>Email address<input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} autoComplete="email" placeholder="name@example.com"/></label><button className="gold-btn full auth-submit" disabled={loading}>{loading?"ပို့နေသည်…":"Reset link ပို့မည် →"}</button></>}</form></section></main>;
+}

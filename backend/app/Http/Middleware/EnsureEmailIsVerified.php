@@ -1,0 +1,4 @@
+<?php
+namespace App\Http\Middleware;
+use Closure;use Illuminate\Http\Request;use Symfony\Component\HttpFoundation\Response;
+class EnsureEmailIsVerified{public function handle(Request $request,Closure $next):Response{if(!$request->user()?->hasVerifiedEmail())return response()->json(['message'=>'Order တင်ရန် email ကို အရင် verify လုပ်ပါ။','code'=>'EMAIL_NOT_VERIFIED'],403);return $next($request);}}
